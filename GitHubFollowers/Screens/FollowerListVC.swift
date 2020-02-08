@@ -21,6 +21,18 @@ class FollowerListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        NetworkManager.shared.getFollower(for: username, page: 1) { [weak self] (followers, errorMessage) in
+            guard let self = self else { return }
+            
+            guard let followers = followers else {
+                self.presentGFAlertOnTheMainThread(title: "Bad Stuff Happend", message: errorMessage!, buttonTitle: "OK")
+                return
+            }
+            
+            print("followers.count: \(followers.count)")
+            print(followers)
+        }
     }
 
 }
