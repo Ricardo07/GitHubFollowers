@@ -57,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				8C47E1FE23D24147004C5BD1 /* GitHubFollowers */,
+				8C47E20D23D2414C004C5BD1 /* Info.plist */,
 				8C47E1FD23D24147004C5BD1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,23 +73,54 @@
 		8C47E1FE23D24147004C5BD1 /* GitHubFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				8C855E3523DA092500E38440 /* Custom Views */,
+				8C855E3623DA099700E38440 /* Extensions */,
+				8C855E3423DA085F00E38440 /* Screens */,
+				8C855E3723DA0A1500E38440 /* Support */,
+			);
+			path = GitHubFollowers;
+			sourceTree = "<group>";
+		};
+		8C855E3423DA085F00E38440 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8C4F947B23D272E1007BB33C /* SearchVC.swift */,
+				8C4F947D23D27350007BB33C /* FavoriteListVC.swift */,
+				8C68EA1F23D5113500B68790 /* FollowerListVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8C855E3523DA092500E38440 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C4F947F23D3693E007BB33C /* GFButton.swift */,
+				8C4F948123D37629007BB33C /* GFTextField.swift */,
+				8C183A1123D60E8A00A4B11A /* GFTitleLabel.swift */,
+				8C183A1323D6120B00A4B11A /* GFBodyLabel.swift */,
+				8C183A1523D6131F00A4B11A /* GFAlertVC.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		8C855E3623DA099700E38440 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CBAA49B23D5FDCA00392298 /* String+Ext.swift */,
+				8C183A1723D640DA00A4B11A /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8C855E3723DA0A1500E38440 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				8C47E1FF23D24147004C5BD1 /* AppDelegate.swift */,
 				8C47E20123D24147004C5BD1 /* SceneDelegate.swift */,
 				8C47E20823D2414C004C5BD1 /* Assets.xcassets */,
 				8C47E20A23D2414C004C5BD1 /* LaunchScreen.storyboard */,
-				8C47E20D23D2414C004C5BD1 /* Info.plist */,
-				8C4F947B23D272E1007BB33C /* SearchVC.swift */,
-				8C4F947D23D27350007BB33C /* FavoriteListVC.swift */,
-				8C4F947F23D3693E007BB33C /* GFButton.swift */,
-				8C4F948123D37629007BB33C /* GFTextField.swift */,
-				8C68EA1F23D5113500B68790 /* FollowerListVC.swift */,
-				8CBAA49B23D5FDCA00392298 /* String+Ext.swift */,
-				8C183A1123D60E8A00A4B11A /* GFTitleLabel.swift */,
-				8C183A1323D6120B00A4B11A /* GFBodyLabel.swift */,
-				8C183A1523D6131F00A4B11A /* GFAlertVC.swift */,
-				8C183A1723D640DA00A4B11A /* UIViewController+Ext.swift */,
 			);
-			path = GitHubFollowers;
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
