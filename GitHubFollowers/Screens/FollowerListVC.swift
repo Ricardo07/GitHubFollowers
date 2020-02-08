@@ -22,16 +22,16 @@ class FollowerListVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         
-        NetworkManager.shared.getFollower(for: username, page: 1) { [weak self] (followers, errorMessage) in
+        NetworkManager.shared.getFollower(for: username, page: 1) { [weak self] result in
             guard let self = self else { return }
             
-            guard let followers = followers else {
-                self.presentGFAlertOnTheMainThread(title: "Bad Stuff Happend", message: errorMessage!.rawValue, buttonTitle: "OK")
-                return
+            switch result {
+            case .success(let followers):
+                print(followers)
+                
+            case .failure(let error):
+                self.presentGFAlertOnTheMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "OK")
             }
-            
-            print("followers.count: \(followers.count)")
-            print(followers)
         }
     }
 
