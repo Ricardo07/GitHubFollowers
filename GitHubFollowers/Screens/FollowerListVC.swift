@@ -11,17 +11,36 @@ import UIKit
 class FollowerListVC: UIViewController {
     
     var username: String!
+    var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-        navigationController?.navigationBar.prefersLargeTitles = true
+        configureViewController()
+        configureCollectionView()
+        getFollowers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        
+    }
+    
+    
+    func configureViewController() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    
+    func configureCollectionView() {
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        view.addSubview(collectionView)
+        collectionView.backgroundColor = .systemPink
+        collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseId)
+    }
+    
+    
+    func getFollowers() {
         NetworkManager.shared.getFollower(for: username, page: 1) { [weak self] result in
             guard let self = self else { return }
             
