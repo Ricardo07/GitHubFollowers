@@ -26,6 +26,7 @@
 		8C55DD2B23EF3314000BF2FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55DD2A23EF3314000BF2FA /* User.swift */; };
 		8C55DD2E23EF443C000BF2FA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55DD2D23EF443C000BF2FA /* NetworkManager.swift */; };
 		8C68EA2023D5113500B68790 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C68EA1F23D5113500B68790 /* FollowerListVC.swift */; };
+		8CB9427D23F2511200E7B387 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9427C23F2511100E7B387 /* UIHelper.swift */; };
 		8CBAA49C23D5FDCA00392298 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAA49B23D5FDCA00392298 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		8C55DD2A23EF3314000BF2FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C55DD2D23EF443C000BF2FA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8C68EA1F23D5113500B68790 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
+		8CB9427C23F2511100E7B387 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		8CBAA49B23D5FDCA00392298 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				8C44B8CE23EF61AD00DFC732 /* GFError.swift */,
+				8CB9427C23F2511100E7B387 /* UIHelper.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				8C183A1223D60E8A00A4B11A /* GFTitleLabel.swift in Sources */,
 				8CBAA49C23D5FDCA00392298 /* String+Ext.swift in Sources */,
 				8C55DD2E23EF443C000BF2FA /* NetworkManager.swift in Sources */,
+				8CB9427D23F2511200E7B387 /* UIHelper.swift in Sources */,
 				8C47E20223D24147004C5BD1 /* SceneDelegate.swift in Sources */,
 				8C183A1423D6120B00A4B11A /* GFBodyLabel.swift in Sources */,
 				8C44B8CF23EF61AD00DFC732 /* GFError.swift in Sources */,
