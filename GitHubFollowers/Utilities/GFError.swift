@@ -2,7 +2,7 @@
 //  GFError.swift
 //  GitHubFollowers
 //
-//  Created by Ricardo Batista on 2/8/20.
+//  Created by Ricardo Batista on 4/15/20.
 //  Copyright © 2020 Ricardo Batista. All rights reserved.
 //
 
