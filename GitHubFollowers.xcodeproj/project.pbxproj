@@ -38,6 +38,7 @@
 		8CB9427D23F2511200E7B387 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB9427C23F2511100E7B387 /* UIHelper.swift */; };
 		8CBAA49C23D5FDCA00392298 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBAA49B23D5FDCA00392298 /* String+Ext.swift */; };
 		8CD77E87244910E400F5F97F /* PersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD77E86244910E400F5F97F /* PersistanceManager.swift */; };
+		8CD77E892449ECB300F5F97F /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD77E882449ECB300F5F97F /* FavoriteCell.swift */; };
 		8CEBF00123F5034F0056BEB4 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEBF00023F5034F0056BEB4 /* GFEmptyStateView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		8CB9427C23F2511100E7B387 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		8CBAA49B23D5FDCA00392298 /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		8CD77E86244910E400F5F97F /* PersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceManager.swift; sourceTree = "<group>"; };
+		8CD77E882449ECB300F5F97F /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		8CEBF00023F5034F0056BEB4 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				8C44B8D123EF7DA800DFC732 /* FollowerCell.swift */,
+				8CD77E882449ECB300F5F97F /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				8C44B8D223EF7DA800DFC732 /* FollowerCell.swift in Sources */,
 				8C232DDC2448A8D7008A55CC /* GFRepoItemVC.swift in Sources */,
 				8C44B8D423EF7E6000DFC732 /* GFAvatarImageView.swift in Sources */,
+				8CD77E892449ECB300F5F97F /* FavoriteCell.swift in Sources */,
 				8C183A1623D6131F00A4B11A /* GFAlertVC.swift in Sources */,
 				8CD77E87244910E400F5F97F /* PersistanceManager.swift in Sources */,
 				8C232DCE2447AC6E008A55CC /* UserInfoVC.swift in Sources */,
