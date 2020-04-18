@@ -13,14 +13,17 @@ class GFEmptyStateView: UIView {
     var messageLabel = GFTitleLabel(textAlignment: .center, fontSize: 28)
     var logoImageView = UIImageView()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     convenience init(message: String) {
         self.init(frame: .zero)

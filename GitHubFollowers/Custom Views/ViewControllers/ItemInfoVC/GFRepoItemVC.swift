@@ -14,6 +14,8 @@ protocol GFRepoItemVCDelegate: class {
 
 class GFRepoItemVC: GFItemInfoVC {
     
+    weak var delegate: GFRepoItemVCDelegate!
+    
     init(user: User, delegate: GFRepoItemVCDelegate) {
         super.init(user: user)
         self.delegate = delegate
@@ -24,8 +26,6 @@ class GFRepoItemVC: GFItemInfoVC {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    weak var delegate: GFRepoItemVCDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -21,17 +21,17 @@ class FollowerCell: UICollectionViewCell {
         configure()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func set(follower: Follower) {
+        avatarImageView.downloadImage(fromURL: follower.avatarUrl)
         usernameLabel.text = follower.login
-        NetworkManager.shared.downloadImage(from: follower.avatarUrl) { [weak self] image in
-            guard let self = self else { return }
-            DispatchQueue.main.async { self.avatarImageView.image = image }
-        }
     }
+    
     
     func configure() {
         addSubviews(avatarImageView, usernameLabel)
@@ -51,6 +51,4 @@ class FollowerCell: UICollectionViewCell {
             usernameLabel.heightAnchor.constraint(equalToConstant: 20) // since the font is 16 we want the label to have spcae to breath
         ])
     }
-    
-    
 }
