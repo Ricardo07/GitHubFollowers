@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoriteListVC: UIViewController {
+class FavoriteListVC: GFDataLoadingVC {
     
     let tableView = UITableView()
     
@@ -19,6 +19,7 @@ class FavoriteListVC: UIViewController {
         configureViewController()
         configureTableView()
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,6 +43,8 @@ class FavoriteListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.removeExcessCells()
+        
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseId)
     }
     
@@ -52,19 +55,23 @@ class FavoriteListVC: UIViewController {
             
             switch result {
             case .success(let favorites):
-                
-                if favorites.isEmpty {
-                    self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screeen.", in: self.view)
-                } else {
-                    self.favorites = favorites
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                        self.view.bringSubviewToFront(self.tableView) // this is in case the empty space is already diplayed infront
-                    }
-                }
+                self.updateUI(with: favorites)
                 
             case .failure(let error):
                 self.presentGFAlertOnTheMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
+            }
+        }
+    }
+    
+    
+    func updateUI(with favorites: [Follower]) {
+        if favorites.isEmpty {
+            self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screeen.", in: self.view)
+        } else {
+            self.favorites = favorites
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.view.bringSubviewToFront(self.tableView) // this is in case the empty space is already diplayed infront
             }
         }
     }
@@ -88,9 +95,7 @@ extension FavoriteListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let favorite = favorites[indexPath.row]
-        let desVC = FollowerListVC()
-        desVC.username = favorite.login
-        desVC.title = favorite.login
+        let desVC = FollowerListVC(username: favorite.login)
         
         navigationController?.pushViewController(desVC, animated: true)
     }
@@ -98,13 +103,13 @@ extension FavoriteListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         
-        let favorite = favorites[indexPath.row]
-        favorites.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .left)
-        
-        PersistanceManger.updatewith(favorite: favorite, actionType: .remove) { [weak self] error in
+        PersistanceManger.updatewith(favorite: favorites[indexPath.row], actionType: .remove) { [weak self] error in
             guard let self = self else { return }
-            guard let error = error else { return }
+            guard let error = error else {
+                self.favorites.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .left)
+                return
+            }
             self.presentGFAlertOnTheMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
     }

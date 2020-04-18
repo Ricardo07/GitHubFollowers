@@ -13,30 +13,31 @@ class GFEmptyStateView: UIView {
     var messageLabel = GFTitleLabel(textAlignment: .center, fontSize: 28)
     var logoImageView = UIImageView()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(message: String) {
-        super.init(frame: .zero)
+    
+    convenience init(message: String) {
+        self.init(frame: .zero)
         messageLabel.text = message
-        configure()
     }
     
     
     func configure() {
-        self.addSubview(messageLabel)
-        self.addSubview(logoImageView)
+        self.addSubviews(messageLabel, logoImageView)
         
         messageLabel.numberOfLines = 3
         messageLabel.textColor = .secondaryLabel
         
-        logoImageView.image = UIImage(named: "empty-state-logo")
+        logoImageView.image = Images.emptyStateLogo
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
         
         let padding: CGFloat = 40
