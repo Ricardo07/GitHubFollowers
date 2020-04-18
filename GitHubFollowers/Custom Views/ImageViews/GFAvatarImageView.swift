@@ -11,7 +11,7 @@ import UIKit
 class GFAvatarImageView: UIImageView {
     
     let cache = NetworkManager.shared.cache
-    let placeholderImage = UIImage(named: "avatar-placeholder")! // its force unwrapped beacuse we now that the image is in the bundle
+    let placeholderImage = Images.placeholder
 
     override init(frame: CGRect) {
         super.init(frame: frame)
